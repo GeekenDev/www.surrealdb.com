@@ -82,7 +82,7 @@
 			<tr>
 				<td>
 					<a href="#use">
-						<Ascua::Prism::Inline @language="js" @code="async db.use({ namespace, database })" />
+						<Ascua::Prism::Inline @language="js" @code="async db.use({ ns, db })" />
 					</a>
 				</td>
 				<td>Switch to a specific namespace and database</td>
@@ -298,8 +298,8 @@
 <Layout::Group {{waypoint "use"}}>
 
 	<Layout::Text text-l text-f>
-		<h3><Ascua::Prism::Inline @language="ts" @code="db.use({ namespace, database })" /></h3>
-		<p>Switch to a specific namespace and database. If only the <code>namespace</code> or <code>database</code> property is specified, the current connection details will be used to fill the other property.</p>
+		<h3><Ascua::Prism::Inline @language="ts" @code="db.use({ ns, db })" /></h3>
+		<p>Switch to a specific namespace and database. If only the <code>ns</code> or <code>db</code> property is specified, the current connection details will be used to fill the other property.</p>
 		<Layout::Table>
 			<table>
 				<thead>
@@ -311,7 +311,7 @@
 				<tbody>
 					<tr>
 						<td>
-							<code>namespace</code>
+							<code>ns</code>
 							<l yellow r>Initially required</l>
 						</td>
 						<td>
@@ -320,7 +320,7 @@
 					</tr>
 					<tr>
 						<td>
-							<code>database</code>
+							<code>db</code>
 							<l yellow r>Initially required</l>
 						</td>
 						<td>
@@ -331,7 +331,7 @@
 			</table>
 		</Layout::Table>
 		<Code @name="docs-integration-libraries-nodejs-use.js">
-			await db.use({ namespace: 'surrealdb', database: 'docs' });
+			await db.use({ ns: 'surrealdb', db: 'docs' });
 		</Code>
 	</Layout::Text>
 
